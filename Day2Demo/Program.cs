@@ -1,4 +1,6 @@
-﻿using Day2Demo.Extention_Methods;
+﻿using Day2Demo.Entities;
+using Day2Demo.Extention_Methods;
+using Day2Demo.Helper;
 
 public class Program
 {
@@ -93,6 +95,26 @@ public class Program
 
 		#endregion
 
+		#endregion
+
+		#region Events
+		List<Employee> employees = new();
+		for (var i = 0; i < 100; i++)
+		{
+			employees.Add(new Employee
+			{
+				Name = $"Employee {i}",
+				BasicSalary = Random.Shared.Next(1000, 5001),
+				Bouns = Random.Shared.Next(0, 1001)
+			});
+		}
+
+		var salaryCalculator = new SalaryCalculator();
+		salaryCalculator.EmployeeSalaryCalculated += (e, salary) =>
+		{
+			Console.WriteLine($"Employee {e.Name} salary {salary} is calculated");
+		};
+		salaryCalculator.CalculateSalary(employees, e => e.BasicSalary <= 2000);
 		#endregion
 	}
 	static void Calculate(int n1, int n2, CalculateDelegate calculate)
