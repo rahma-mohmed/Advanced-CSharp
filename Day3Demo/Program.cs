@@ -35,6 +35,13 @@
 
 		private static void ProcessBatch1(object? state)
 		{
+			var cancellationToken = (CancellationToken)state;
+
+			if (cancellationToken.IsCancellationRequested)
+			{
+				Console.WriteLine("Cancellation requested");
+				return;
+			}
 			// lock used to 
 			lock (_lock)
 			{
