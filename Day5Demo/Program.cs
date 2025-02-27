@@ -16,6 +16,11 @@ namespace Day5Demo
 			{
 				Console.WriteLine($"{payItem.Name} : {payItem.Amount}");
 			}
+
+			for (int i = 0; i < employee.Count(); i++)
+			{
+				Console.WriteLine($"{employee[i].Name} : {employee[i].Amount}");
+			}
 		}
 	}
 }

@@ -13,6 +13,16 @@ namespace Day5Demo.Entities
 			_payItems.Add(new PayItem { Name = name, Amount = value });
 		}
 
+		#region Indexer
+		public PayItem this[int index]
+		{
+			get
+			{
+				return _payItems[index];
+			}
+		}
+		#endregion
+
 		public IEnumerator<PayItem> GetEnumerator()
 		{
 			foreach (var payItem in _payItems)
