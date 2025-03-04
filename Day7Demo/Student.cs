@@ -3,8 +3,8 @@
 	public class Student
 	{
 		public string Name { get; set; }
-		public int Age { get; set; }
-		public string Address { get; set; }
+		protected int Age { get; set; }
+		internal string Address { get; set; }
 
 		public Student()
 		{
