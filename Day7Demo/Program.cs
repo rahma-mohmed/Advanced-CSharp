@@ -210,6 +210,17 @@ namespace Day7Demo
 			//	Console.WriteLine(item.Key + " - " + item.Value);
 			//}
 			#endregion
+
+			#region Class inherits List
+			//List<int> list3 = new MyList(); //upcasting
+			MyList list3 = new MyList();
+			list3.Add(1);
+			list3.Add(2);
+			#endregion
+
+			//Each collection inherits IEnumerable interface
+			IEnumerable<int> list4 = new List<int>();
+			IEnumerable<int> list5 = new MyList();
 		}
 	}
 }
