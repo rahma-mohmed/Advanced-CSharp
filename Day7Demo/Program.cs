@@ -143,6 +143,22 @@ namespace Day7Demo
 			//Console.WriteLine(sb);
 			#endregion
 
+			#region Mutable Object
+			MutablePoint mutablePoint = new MutablePoint(10, 20);
+			//Console.WriteLine(mutablePoint.GetHashCode());
+			mutablePoint.x = 30;
+			mutablePoint.y = 40;
+			//Console.WriteLine(mutablePoint.GetHashCode());
+			#endregion
+
+			#region Immutable Object
+			ImmutablePoint immutablePoint = new ImmutablePoint(10, 20);
+			//Console.WriteLine(immutablePoint.GetHashCode());
+			//immutablePoint.x = 10; //Error
+			immutablePoint = new ImmutablePoint(20, 20);
+			//Console.WriteLine(immutablePoint.GetHashCode());
+			#endregion
+
 			#region Generic
 			//Generic class is a class that can work with any data type
 
