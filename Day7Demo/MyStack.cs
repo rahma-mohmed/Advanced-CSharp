@@ -1,6 +1,6 @@
 ﻿namespace Day7Demo
 {
-	public class MyStack<T>
+	public class MyStack<T> //where T : new() // T must have a default constructor (parameterless constructor), struct (value type)
 	{
 		T[] arr;
 		int size;
