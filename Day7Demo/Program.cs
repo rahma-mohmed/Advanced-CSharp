@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections;
+using System.Text;
 
 namespace Day7Demo
 {
@@ -157,6 +158,57 @@ namespace Day7Demo
 			stack2.Push("C#");
 
 			//Console.WriteLine(stack2.Pop());
+			#endregion
+
+			#region Array
+			//Array is a collection of similar data types has a fixed size
+			#endregion
+
+			#region non-generic collection (ArrayList) [carry data of object type]
+			//ArrayList is a non-generic collection
+			//ArrayList can store multiple data types
+			//ArrayList is slower than generic collections
+			ArrayList list = new ArrayList();
+			list.Add(1);
+			list.Add("Hello");
+			list.Add(3.14);
+			//foreach (var item in list)
+			//{
+			//	Console.WriteLine(item);
+			//}
+
+			#endregion
+
+			#region generic collection (List<T>) [carry data of specific type]
+			//List<T> is a generic collection
+			//List<T> can store a single data type
+			//List<T> is faster than non-generic collections
+			List<int> list2 = new List<int>(2);
+			list2.Add(1); //2
+			list2.Add(2); //2
+			list2.Add(3); //4
+			list2.Add(4); //4
+			list2.Add(5); //8
+						  //list2.Remove(5);
+						  //list2.RemoveAt(2);
+						  //list2.RemoveRange(1, 2);
+			list2.TrimExcess();
+			Console.WriteLine(list2.Capacity);
+			#endregion
+
+			#region Dictionary
+			//Dictionary<TKey, TValue> is a generic collection
+			//Dictionary<TKey, TValue> is a collection of key-value pairs
+			//Dictionary<TKey, TValue> is faster than non-generic collections
+			Dictionary<int, string> dict = new Dictionary<int, string>();
+			dict.Add(1, "One");
+			dict.Add(2, "Two");
+			dict.Add(3, "Three");
+
+			//foreach (var item in dict)
+			//{
+			//	Console.WriteLine(item.Key + " - " + item.Value);
+			//}
 			#endregion
 		}
 	}
