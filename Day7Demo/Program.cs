@@ -1,4 +1,6 @@
-﻿namespace Day7Demo
+﻿using System.Text;
+
+namespace Day7Demo
 {
 	internal class Program
 	{
@@ -92,6 +94,71 @@
 			//Struct is a value type 
 			//Structs can implement interfaces but they cannot inherit from another struct.
 			#endregion
+
+			#region Clone Object from array
+			int[] arr = { 1, 2, 3, 4, 5 };
+			int[] arr2 = (int[])arr.Clone();
+			//Console.WriteLine(arr.GetHashCode());
+			//Console.WriteLine(arr2.GetHashCode());
+			#endregion
+
+			#region Clone Object from class
+			Student student01 = new Student { Name = "Rahma", Address = "Damietta" };
+			Student student02 = (Student)student01.Clone();
+			//Console.WriteLine(student01.GetHashCode());
+			//Console.WriteLine(student02.GetHashCode());
+			#endregion
+
+			#region Compare Objects
+			Student[] students = new Student[] {
+				 new Student { Name = "Rahma", Address = "Damietta" },
+				 new Student { Name = "Ali", Address = "Cairo" },
+				 new Student { Name = "Hassan", Address = "Damietta" },
+			};
+			Array.Sort(students);
+			//foreach (var student in students)
+			//{
+			//	Console.WriteLine(student);
+			//}
+			#endregion
+
+			#region String
+			//String is a reference type
+			//String is immutable
+			string str1 = "Hello";
+			//Console.WriteLine(str1.GetHashCode());
+			string str2 = "Hello";
+			str1 += " World";
+			//Console.WriteLine(str1.GetHashCode());
+			//Console.WriteLine(str1 == str2); //True
+			//Console.WriteLine(str1.Equals(str2)); //True
+			#endregion
+
+			#region StringBuilder
+			//StringBuilder is mutable
+			//StringBuilder is faster than string
+			StringBuilder sb = new StringBuilder("Hello");
+			sb.Append(" World");
+			//Console.WriteLine(sb);
+			#endregion
+
+			#region Generic
+			//Generic class is a class that can work with any data type
+
+			MyStack<int> stack = new MyStack<int>(3);
+			stack.Push(1);
+			stack.Push(2);
+			stack.Push(3);
+			//Console.WriteLine(stack.Pop());
+
+			MyStack<string> stack2 = new MyStack<string>(3);
+			stack2.Push("Hello");
+			stack2.Push("World");
+			stack2.Push("C#");
+
+			//Console.WriteLine(stack2.Pop());
+			#endregion
 		}
 	}
 }
+

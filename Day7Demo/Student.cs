@@ -1,6 +1,6 @@
 ﻿namespace Day7Demo
 {
-	public class Student
+	public class Student : ICloneable, IComparable
 	{
 		public string Name { get; set; }
 		protected int Age { get; set; }
@@ -36,6 +36,17 @@
 		public override string ToString()
 		{
 			return $"{Name} - {Age} - {Address}";
+		}
+
+		public object Clone()
+		{
+			return new Student { Name = this.Name, Age = this.Age, Address = this.Address };
+		}
+
+		public int CompareTo(object? obj)
+		{
+			Student student = obj as Student;
+			return this.Name.CompareTo(student.Name);
 		}
 	}
 }
