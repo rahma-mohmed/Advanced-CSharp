@@ -70,7 +70,6 @@
 
 			Print<Employee> print = Trial.Write;
 			print(emp2);
-			#endregion
 
 			GetEmployeeByAge getEmployeeByAge = emp => emp.Age <= 25 ? "young employee" : "old employee";
 			Console.WriteLine(getEmployeeByAge(emp2));
@@ -78,6 +77,15 @@
 			//predicate take one generic params and return bool
 			//action take one or more generic params from 0 to 16 and return void 
 			//func take one or more generic params from 0 to 16 and return one generic param
+
+			#region List of numbers
+			List<int> numbers = Enumerable.Range(1, 100).ToList();
+			List<int> evenNumbers = numbers.FindAll(num => num % 2 == 0);
+			numbers.RemoveAll(num => num % 2 != 0); // remove all odd numbers
+			Console.WriteLine(numbers.All(x => x % 2 == 0)); // check if all elements in the list satisfy the condition
+			Console.WriteLine(numbers.Any(x => x % 2 == 0)); // check if any element in the list satisfy the condition
+			#endregion
+			#endregion
 		}
 	}
 }
